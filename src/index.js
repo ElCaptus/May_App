@@ -6,7 +6,7 @@ const {mongoose} = require('./database')
 
 const app = express()
 
-const PORT = 3000
+const PORT = 8000
 
 // settings
 app.set('port', process.env.PORT || PORT)
