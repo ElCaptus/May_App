@@ -19,7 +19,7 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname,'public')))
 
 //routes
-app.use('/api/',require('./routes/task.routes'))
+app.use('/api/',require('./routes/poke.routes'))
 
 const server = app.listen(app.get('port'), ()=>{
     console.log(`Running at ${app.get('port')}`)
