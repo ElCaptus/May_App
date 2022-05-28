@@ -1,13 +1,8 @@
+import React from "react";
+import { createRoot } from 'react-dom/client'
+import App from './components/App.js'
 
-import React, { Component } from "react";
-import ReactDom, { render } from "react-dom";
+const container = document.getElementById('app')
+const root = createRoot(container)
 
-class App extends Component{
-    render(){
-        return (
-            <h1>May App</h1>
-        )
-    }
-}
-
-render(<App/>, document.getElementById('app'))
+root.render(<App/>)
