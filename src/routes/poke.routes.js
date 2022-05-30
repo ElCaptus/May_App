@@ -22,10 +22,19 @@ router.get('/:id', async (req,res)=>{
 })
 
 router.post('/', async (req,res)=>{
-    const {name, pict} = req.body
-    const newPokemon = new PokemonSchema({name,pict})
-    await newPokemon.save();
+    const elem = req.body
+    if(req.body.name){
+        const {name, pict} = req.body
+        const newPokemon = new PokemonSchema({name,pict})
+        await newPokemon.save();
+    }else{
+        for({name, pict} of elem){
+            const newPokemon = new PokemonSchema({name, pict})
+            await newPokemon.save()
+        }
+    }
     res.json({
+        content: elem,
         status: "saved"
     })
 })
