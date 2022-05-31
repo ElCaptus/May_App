@@ -1,22 +1,24 @@
 import React, { Component } from "react";
+import Game from "./Game";
 
-class App extends Component{
-    render(){
-        return (
-            <div>
-                <nav className="light-blue darken4">
-                    <div className="container">
-                        <a className="brand-logo" href="/"> Poke Memo</a>
-                        <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a href="memo.html">Game</a></li>
-                            <li><a href="pokemons.html">Pokemons</a></li>
-                            <li><a href="info.html">Info</a></li>
-                        </ul>
-                    </div>
-                </nav>
+function App (){
+    return (
+        <div className="full-size">
+            <nav className="light-blue darken4">
+                <div className="container">
+                    <a className="brand-logo" href="/"> Poke Memo</a>
+                    <ul id="nav-mobile" className="right hide-on-med-and-down">
+                        <li><a href="/">Game</a></li>
+                        <li><a href="pokemons.html">Pokemons</a></li>
+                        <li><a href="https://github.com/ElCaptus/May_App" target="_blank">GitHub Repo</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div className='full-size'>
+                <Game/>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default App; 
