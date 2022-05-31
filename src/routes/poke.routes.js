@@ -21,20 +21,22 @@ router.get('/:id', async (req,res)=>{
     res.json(pokemon);
 })
 
-router.post('/', async (req,res)=>{
-    const elem = req.body
-    if(req.body.name){
-        const {name, pict} = req.body
+async function saveDB({name, pict}){
         const newPokemon = new PokemonSchema({name,pict})
         await newPokemon.save();
-    }else{
-        for({name, pict} of elem){
-            const newPokemon = new PokemonSchema({name, pict})
-            await newPokemon.save()
+}
+
+router.post('/', async (req,res)=>{
+    const body = req.body
+    if(Array.isArray(body)){
+        for(elem of body){
+            await saveDB(elem)
         }
+    }else{
+        await saveDB(body)
     }
     res.json({
-        content: elem,
+        content: body,
         status: "saved"
     })
 })
