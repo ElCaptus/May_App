@@ -10,7 +10,7 @@ body{
 .full-size{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 0;
     width: 100%;
@@ -26,7 +26,7 @@ body{
     height: 90%;
 }
 .game-container h1{
-    margin: 0;
+    margin: 0 0 0.3em 0;
 }
 
 .table-container{
@@ -91,4 +91,17 @@ body{
 
 .card-container.active img{
     transform: scale(1);
+}
+
+.game-nav{
+    margin: 0 0 10px 0;
+}
+
+.game-nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+.game-nav h4{
+    margin: 0.3em 0 0 0;
 }
