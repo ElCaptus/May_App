@@ -9,7 +9,7 @@ function App (){
                     <a className="brand-logo" href="/"> Poke Memo</a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li><a href="/">Game</a></li>
-                        <li><a href="pokemons.html">Pokemons</a></li>
+                        {/* <li><a href="pokemons.html">Pokemons</a></li> */}
                         <li><a href="https://github.com/ElCaptus/May_App" target="_blank">GitHub Repo</a></li>
                     </ul>
                 </div>
