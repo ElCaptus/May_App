@@ -13,7 +13,7 @@ function Game (){
     },[])
     const [pokemons, setPokemons] = useState([])
     
-    let pokes = pokemons.slice(0,8)
+    let pokes = pokemons.sort(()=> Math.random() -0.5).slice(0,8)
     pokes = [...pokes, ...pokes.map(elem => {return {...elem}})].sort(()=> Math.random() -0.5)
 
     return (
