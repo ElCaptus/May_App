@@ -6,7 +6,7 @@
     "start": "node ./src/index.js",
     "dev": "nodemon ./src/index.js",
     "webpackw": "webpack --mode development --watch",
-    "webpack": "webpack --mode development"
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
