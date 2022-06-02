@@ -1,5 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import Game from "./Game";
+import Pokemons from "./Pokemons"
+import {
+    BrowserRouter as Router,
+    Route,
+    Routes
+  } from "react-router-dom";
 
 function App (){
     return (
@@ -9,13 +15,18 @@ function App (){
                     <a className="brand-logo" href="/"> Poke Memo</a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li><a href="/">Game</a></li>
-                        {/* <li><a href="pokemons.html">Pokemons</a></li> */}
+                        <li><a href="pokemons.html">Pokemons</a></li>
                         <li><a href="https://github.com/ElCaptus/May_App" target="_blank">GitHub Repo</a></li>
                     </ul>
                 </div>
             </nav>
             <div className='full-size'>
-                <Game/>
+            <Router>
+                <Routes>
+                    <Route exact path="/" element={<Game/>}/>
+                    <Route exact path="/pokemons.html" element={<Pokemons/>}/>
+                </Routes>
+            </Router>
             </div>
         </div>
     )
