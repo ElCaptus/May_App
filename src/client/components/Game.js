@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import GameTable from './GameTable'
 import Loader from "./Loader";
 
