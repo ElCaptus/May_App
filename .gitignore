@@ -2,3 +2,4 @@
 *.txt
 /src/public/dist
 /src/public/dist/bundle.js
+.env

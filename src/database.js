@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
+require('dotenv').config()
 
-const URI = 'mongodb://localhost/mern_pokemons'
+const URI = process.env.MONGO_URI
 
 mongoose.connect(URI)
-    .then(db => console.log('mern_app DB is connected'))
+    .then(db => console.log('POKEAPI is connected'))
     .catch(err => console.error(err))
 
 module.exports = mongoose
