@@ -223,7 +223,7 @@ body{
     right: 0.6em;
     top: 0.6em;
     border-radius: 100%;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.8s ease-in-out;
 }
 
 .reset-button img{
@@ -232,7 +232,7 @@ body{
 }
 
 .reset-button:hover{
-    transform: rotate(360deg) scale(1.2);
+    transform: rotate(720deg) scale(1.2);
 }
 
 .game-menu{
@@ -253,3 +253,11 @@ body{
     -ms-user-select: none;
     -khtml-user-select: none;
   }
+
+.back-to-menu{
+    left: 0.6em;
+}
+
+.back-to-menu:hover{
+    transform: rotate(-720deg) scale(1.2);
+}

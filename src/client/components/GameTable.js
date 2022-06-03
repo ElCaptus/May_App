@@ -73,6 +73,9 @@ function GameTable ({pokemones, maxAttempts, levelName, levelClass}){
         <div className="full-size">
             <nav className={'game-nav '+currentClass}>
                 <ul>
+                    <a className="reset-button back-to-menu" href='/'>
+                        <img src="https://www.tienda.naturf.net/imagenes/icon/ecommerce/ico-volver.png" alt="Back to menu button"/>
+                    </a>
                     <li><h4>Cards: {cardsFound}/{pokemones.length /2}</h4></li>
                     <li><h4>Attempts: {attempts}/{maxAttempts}</h4></li>
                     <a className="reset-button" href={`/?level=${levelName}`}>
