@@ -1,13 +1,28 @@
 import React from "react";
-import Game from "./Game";
+import GameMenu from "./GameMenu";
 import Pokemons from "./Pokemons"
 import {
     BrowserRouter as Router,
     Route,
-    Routes
+    Routes,
+    useLocation
   } from "react-router-dom";
 
 function App (){
+    return (
+        <Router>
+            <WebApp/>
+        </Router>
+    )
+}
+
+function useQuery() {
+    const { search } = useLocation();
+    return React.useMemo(() => new URLSearchParams(search), [search]);
+}
+
+function WebApp (){
+    let query = useQuery()
     return (
         <div className="full-size">
             <nav className="light-blue darken4">
@@ -21,12 +36,10 @@ function App (){
                 </div>
             </nav>
             <div className='full-size'>
-            <Router>
-                <Routes>
-                    <Route exact path="/" element={<Game/>}/>
-                    <Route exact path="/pokemons.html" element={<Pokemons/>}/>
-                </Routes>
-            </Router>
+            <Routes>
+                <Route exact path="/" element={<GameMenu levelInit={query.get("level")}/>}/>
+                <Route exact path="/pokemons.html" element={<Pokemons/>}/>
+            </Routes>
             </div>
         </div>
     )

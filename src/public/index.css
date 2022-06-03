@@ -17,34 +17,52 @@ body{
 }
 
 .full-size{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0;
-    width: 100%;
     height: 100%;
 }
 
 .game-container{
     padding: 2px 5px;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 98%;
-    height: 90%;
 }
 .game-container h1{
     margin: 0 0 0.3em 0;
 }
 
+.loader{
+    margin-top: 20em;
+}
+
 .table-container{
-    height: 50em;
-    width: 50em;
+    height: 700px;
+    width: 700px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1em;
+}
+
+.medium-table{
+    height: 700px;
+    width: 1050px;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.hard-table{
+    height: 875px;
+    width: 1050px;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.insane-table{
+    height: 1050px;
+    width: 1225px;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
 }
 
 .card-container{
@@ -92,6 +110,24 @@ body{
 
 .card-container.correct{
     background-color: var(--bg-correct-card)  ;
+    animation: removed-card-animation 1s cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
+    transform-origin: 0% 100%;
+}
+
+.win{
+    background-color: var(--bg-correct-card)  ;
+}
+
+@keyframes removed-card-animation {
+    0% {
+        opacity: 1;
+        transform: rotateZ(0);
+}
+ 
+    100% {
+        opacity: 0;
+        transform: rotateZ(90deg);
+    }
 }
 
 .card-container.wrong{
@@ -104,6 +140,7 @@ body{
 
 .game-nav{
     margin: 0 0 10px 0;
+    position: relative;
 }
 
 .game-nav ul{
@@ -153,3 +190,66 @@ body{
 .sample-card:hover{
     background-color: var(--bg-hover-sample-card);
 }
+
+.menu-button{
+    margin: 10px 25px;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    border-radius: 2px;
+    height: 54px;
+    line-height: 54px;
+    font-size: 15px;
+    padding: 0 28px;
+    -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+    background-color: var(--bg-hover-sample-card);
+}
+
+.reset-button{
+    background-color: #fff;
+    height: 3em;
+    width: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0.6em;
+    top: 0.6em;
+    border-radius: 100%;
+    transition: all 0.4s ease-in-out;
+}
+
+.reset-button img{
+    height: fit-content;
+    max-height: 2em;
+}
+
+.reset-button:hover{
+    transform: rotate(360deg) scale(1.2);
+}
+
+.game-menu{
+    text-align: center;
+    margin-top: 20em ;
+}
+ 
+
+.menu-button:hover{
+    background-color: var(--bg-sample-card);
+}
+
+.noselect {
+    user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+  }

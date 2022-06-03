@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from './GameCard'
 
 
-function GameTable ({pokemones}){
+function GameTable ({pokemones, maxAttempts, levelName, levelClass}){
 
     useEffect(()=>{
         setPokemons(pokemones)
@@ -10,7 +10,25 @@ function GameTable ({pokemones}){
 
     const [pokemons, setPokemons] = useState(null)
 
+    const [currentClass, setCurrentClass] = useState('')
+
     function check(current){
+
+        if(cardsFound+1 == pokemons.length /2){
+            pokemons.map((pokemon)=>{
+                pokemon.stat = 'win'
+            })
+            setCurrentClass(pokemons[current].stat)
+            setPokemons(pokemons)
+            return
+        }
+        if(attempts+1 >= maxAttempts){
+            pokemons.map((pokemon)=>{
+                pokemon.stat = 'wrong'
+            })
+            setPokemons(pokemons)
+            return
+        }
         if(pokemons[current]._id === pokemons[prev]._id){
             pokemons[current].stat = 'correct'
             pokemons[prev].stat = 'correct'
@@ -52,14 +70,17 @@ function GameTable ({pokemones}){
     })
 
     return( 
-        <div>
-            <nav className="game-nav">
+        <div className="full-size">
+            <nav className={'game-nav '+currentClass}>
                 <ul>
                     <li><h4>Cards: {cardsFound}/{pokemones.length /2}</h4></li>
-                    <li><h4>Attempts: {attempts}</h4></li>
+                    <li><h4>Attempts: {attempts}/{maxAttempts}</h4></li>
+                    <a className="reset-button" href={`/?level=${levelName}`}>
+                        <img src="https://icons.veryicon.com/png/o/miscellaneous/regular-icon/refresh-209.png" alt="refresh"/>
+                    </a>
                 </ul>
             </nav>
-            <div className="table-container">
+            <div className={'table-container '+(levelClass||'')}>
                 {cards}
             </div>
         </div>

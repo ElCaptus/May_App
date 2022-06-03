@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import GameTable from './GameTable'
 import Loader from "./Loader";
 
-function Game (){
+function Game ({level}){
 
     useEffect(()=>{
         fetch('/api')
@@ -12,14 +12,21 @@ function Game (){
         })
     },[])
     const [pokemons, setPokemons] = useState([])
-    
-    let pokes = pokemons.sort(()=> Math.random() -0.5).slice(0,8)
+
+    let pokes = pokemons.sort(()=> Math.random() -0.5).slice(0,level.size)
     pokes = [...pokes, ...pokes.map(elem => {return {...elem}})].sort(()=> Math.random() -0.5)
 
     return (
-        <div className="game-container full-size">
+        <div className="game-container">
             <h1>Poke Memo</h1>
-            { pokemons.length > 0 ? <GameTable pokemones={pokes} />: <Loader/>}
+            { 
+            pokemons.length ? 
+                <GameTable pokemones={pokes} maxAttempts={level.attempts} levelName={level.name} levelClass={level.class}/>
+            : 
+                <div className="loader">
+                    <Loader/>
+                </div>
+            }
         </div>
     )
 }
