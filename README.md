@@ -11,14 +11,13 @@ La tematica de este juego es de pokemon.
 
 El juego se gana si se descubren todas las parejas.
 
-En esta version, la aplicacion muestra un tablero con cartas, las cuales empiezan dadas vuelta para ver el orden en el que estan y luego se dan vuelta para que intentes encontrar las parejas como recuerdes. Puedes darlas vuelta e indican con colores el estado correcto o incorrecto de las mismas.
+La  ultima version siempre estara publicada en https://pokememo.up.railway.app/ .
 
 Proximamente estare actualizando.
 
 Versiones:
 - 0.0.1: Muestra tablero con cartas, se puede jugar.
 - 0.0.2: Se agrega cantidad de parejas de cartas encontradas y la cantidad de intentos realizados.
-- 0.0.3: Dispone de menu inicial y reseteo de nivel.
-- 0.0.4: Agregado de niveles.
-- 0.0.5: Submit puntuacion.
-- 0.1.0: Con la pantalla de victoria sale el primer release.
+- 0.0.3: Dispone de menu inicial y reseteo de nivel. Agregado de niveles. Con la pantalla de victoria y derrota.
+- 0.0.4: Submit puntuacion.
+- 0.1.0: Version final con responsive design.
