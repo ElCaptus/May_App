@@ -1,6 +1,4 @@
 const express = require('express')
-const { route } = require('express/lib/router')
-const pokemons = require('../models/pokemons')
 const PokemonSchema = require('../models/pokemons')
 const router = express.Router()
 
@@ -25,7 +23,6 @@ async function saveDB({name, pict}, status){
         const newPokemon = new PokemonSchema({name,pict})
         await newPokemon.save().catch((error)=>{
             status = 'Refuced.'
-            
         });
         return status;
 }
