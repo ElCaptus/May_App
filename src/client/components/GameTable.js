@@ -14,18 +14,20 @@ function GameTable ({pokemones, maxAttempts, levelName, levelClass}){
 
     function check(current){
 
-        if(cardsFound+1 == pokemons.length /2){
+        if(cardsFound+1 >= pokemons.length /2){
             pokemons.map((pokemon)=>{
                 pokemon.stat = 'win'
             })
             setCurrentClass(pokemons[current].stat)
             setPokemons(pokemons)
+            setCardsFound(cardsFound+1)
             return
         }
         if(attempts+1 >= maxAttempts){
             pokemons.map((pokemon)=>{
                 pokemon.stat = 'wrong'
             })
+            setAttempts(attempts+1)
             setPokemons(pokemons)
             return
         }
