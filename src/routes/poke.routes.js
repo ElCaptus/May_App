@@ -15,8 +15,13 @@ router.get('/',async (req,res)=>{
 })
 
 router.get('/:id', async (req,res)=>{
-    const pokemon = await PokemonSchema.findById(req.params.id)
-    res.json(pokemon);
+    try{
+        const pokemon = await PokemonSchema.findById(req.params.id)
+        res.json(pokemon);
+    }
+    catch{
+        res.json({message: 'Invalid id'})
+    }
 })
 
 async function saveDB({name, pict}, status){
