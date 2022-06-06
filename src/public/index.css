@@ -109,13 +109,9 @@ body{
 }
 
 .card-container.correct{
-    background-color: var(--bg-correct-card)  ;
+    background-color: var(--bg-correct-card);
     animation: removed-card-animation 1s cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
     transform-origin: 0% 100%;
-}
-
-.win{
-    background-color: var(--bg-correct-card)  ;
 }
 
 @keyframes removed-card-animation {
@@ -128,6 +124,10 @@ body{
         opacity: 0;
         transform: rotateZ(90deg);
     }
+}
+
+.no-anim{
+    animation: none;
 }
 
 .card-container.wrong{
@@ -260,4 +260,43 @@ body{
 
 .back-to-menu:hover{
     transform: rotate(-720deg) scale(1.2);
+}
+
+.game-score-form{
+    text-align: center;
+    background-color: #000000bd;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.float-score-form{
+    background-color: #ef5350;
+    width: 300px;
+    z-index: 20;
+    padding: 2em 1em;
+}
+
+.score input{
+    text-align: center;
+}
+
+.score-table{
+    display: flex;
+    border: 1px solid black;
+    flex-direction: column;
+}
+
+.overflowed{
+    color: #ef5350;
+}
+
+.win{
+    background-color: var(--bg-correct-card);
 }
