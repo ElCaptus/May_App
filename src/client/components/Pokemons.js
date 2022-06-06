@@ -5,7 +5,7 @@ import Loader from "./Loader";
 function Pokemons(){
     
     useEffect(()=>{
-        fetch('/api')
+        fetch('/api/pokes')
         .then(data => data.json())
         .then(pokemonResponse => {
             setPokemons(pokemonResponse.content.value)
