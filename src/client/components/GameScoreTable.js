@@ -18,9 +18,10 @@ function GameScoreTable({level = ''}){
             scores.sort((a,b)=>{
                 return levels[b.level].size - levels[a.level].size
             })
+            let filteredScores = scores
             if(level)
-                scores.filter(score => score.level === level )
-            setScores(scores.slice(0,TOP_SCORE))
+                filteredScores = scores.filter(score => score.level === level )
+            setScores(filteredScores.slice(0,TOP_SCORE))
         })
     },[])
 

@@ -61,7 +61,7 @@ function GamescoreForm({state, errors, level, close}){
                 <div></div>
             }
         </div>
-        <GameScoreTable/>
+        <GameScoreTable level={level.name}/>
     </div>
     :
     <div></div>
