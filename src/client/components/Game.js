@@ -21,7 +21,7 @@ function Game ({level}){
             <h1>Poke Memo</h1>
             { 
             pokemons.length ? 
-                <GameTable pokemones={pokes} maxAttempts={level.attempts} levelName={level.name} levelClass={level.class}/>
+                <GameTable pokemones={pokes} level={level}/>
             : 
                 <div className="loader">
                     <Loader/>

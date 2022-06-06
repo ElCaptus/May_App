@@ -1,33 +1,9 @@
 import React, { useState } from "react";
 import Game from "./Game";
+import GameScoreTable from './GameScoreTable'
+import levels from './levels'
 
 function GameMenu({levelInit}){
-    const levels = {
-        easy:{
-            name:'easy',
-            size: 8,
-            attempts: 5,
-            class: ''
-        },
-        medium:{
-            name:'medium',
-            size: 12,
-            attempts: 5,
-            class: 'medium-table'
-        },
-        hard:{
-            name:'hard',
-            size: 15,
-            attempts: 5,
-            class: 'hard-table'
-        },
-        insane:{
-            name:'insane',
-            size: 21,
-            attempts: 5,
-            class: 'insane-table'
-        }
-    }
 
     const [level, setLevel] = useState('')
 
@@ -40,7 +16,7 @@ function GameMenu({levelInit}){
         handleClick({level:levelInit})
 
     return (
-        <div className="full-size">
+        <div className="full-size menu-position-score">
             {
                 level == '' ? 
                 <div className="game-menu">
@@ -51,6 +27,12 @@ function GameMenu({levelInit}){
                 </div>
                 :
                 (<Game level={level}/>)
+            }
+            {
+                (level == '') ?
+                    <GameScoreTable/>
+                    :
+                    <div></div>
             }
         </div>
     )
