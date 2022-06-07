@@ -18,7 +18,6 @@ function Game ({level}){
 
     return (
         <div className="game-container">
-            <h1>Poke Memo</h1>
             { 
             pokemons.length ? 
                 <GameTable pokemones={pokes} level={level}/>

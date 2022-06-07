@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Card from './GameCard'
 import GameScoreForm from './GameScoreForm'
+import GameScoreTable from './GameScoreTable'
 
 function GameTable ({pokemones, level}){
 
-    const [state, setState] = useState('')
+    const [state, setState] = useState()
 
     useEffect(()=>{
         setPokemons(pokemones)
@@ -88,22 +89,29 @@ function GameTable ({pokemones, level}){
     })
 
     return( 
-        <div className="full-size">
+        <div class="">
             <GameScoreForm state={state} close={closeScoreForm} level={level} errors={attempts}/>
             <nav className={'game-nav '+currentClass}>
                 <ul>
+                    <li>
                     <a className="reset-button back-to-menu" href='/'>
                         <img src="https://www.tienda.naturf.net/imagenes/icon/ecommerce/ico-volver.png" alt="Back to menu button"/>
                     </a>
+                    </li>
                     <li><h4>Cards: {cardsFound}/{pokemones.length /2}</h4></li>
                     <li><h4>Attempts: {attempts}</h4></li>
+                    <li>
                     <a className="reset-button" href={`/?level=${level.name}`}>
                         <img src="https://icons.veryicon.com/png/o/miscellaneous/regular-icon/refresh-209.png" alt="refresh"/>
                     </a>
+                    </li>
                 </ul>
             </nav>
             <div className={`table-container ${level.class}`}>
                 {cards}
+            </div>
+            <div className="game-score">
+                <GameScoreTable level={level.name}/>
             </div>
         </div>
         )
