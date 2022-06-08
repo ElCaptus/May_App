@@ -394,6 +394,13 @@ body{
         --four-card-lenght: 440px;
     }
 
+    .insane-table{
+        width: var(--insane-height);
+        height: var(--insane-width);
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+    }
+
 }
 
 @media (max-width: 670px){
@@ -409,15 +416,34 @@ body{
         justify-content: start;
     }
     
+    .medium-table{
+        width: var(--four-card-lenght);
+        height: var(--six-card-lenght);
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .hard-table{
+        width: var(--five-card-lenght);
+        height: var(--six-card-lenght);
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
 }
 
 
 @media (max-width: 450px){
-    :root{
-        --four-card-lenght: 350px;
-        --five-card-lenght: 437.5px;
-        --six-card-lenght: 525px;
+
+    .big-screen{
+        display: none;
     }
+
+    :root{
+        --four-card-lenght: 275px;
+        --five-card-lenght: 343.75px;
+    }
+
     .game-nav h4{
         font-size: 1.3em;
     }

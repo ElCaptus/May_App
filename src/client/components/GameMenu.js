@@ -24,7 +24,7 @@ function GameMenu({levelInit}){
                         <input type="button" className="menu-button" value="Easy" onClick={()=> handleClick({level:'easy'})}/>
                         <input type="button" className="menu-button" value="Medium" onClick={()=> handleClick({level:'medium'})}/>
                         <input type="button" className="menu-button" value="Hard" onClick={()=> handleClick({level:'hard'})}/>
-                        <input type="button" className="menu-button" value="Insane" onClick={()=> handleClick({level:'insane'})}/>
+                        <input type="button" className="menu-button big-screen" value="Insane" onClick={()=> handleClick({level:'insane'})}/>
                     </div>
                     <GameScoreTable/>
                 </div>
