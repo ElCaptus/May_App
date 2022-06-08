@@ -442,6 +442,7 @@ body{
     :root{
         --four-card-lenght: 275px;
         --five-card-lenght: 343.75px;
+        --six-card-lenght: 414.5;
     }
 
     .game-nav h4{
