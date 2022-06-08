@@ -24,7 +24,7 @@ function useQuery() {
 function WebApp (){
     let query = useQuery()
     return (
-        <div className="full-size">
+        <>
             <nav className="light-blue darken4">
                 <div className="container">
                     <a className="brand-logo" href="/"> Poke Memo</a>
@@ -35,13 +35,11 @@ function WebApp (){
                     </ul>
                 </div>
             </nav>
-            <div className='full-size'>
             <Routes>
                 <Route exact path="/" element={<GameMenu levelInit={query.get("level")}/>}/>
                 <Route exact path="/pokemons.html" element={<Pokemons/>}/>
             </Routes>
-            </div>
-        </div>
+        </>
     )
 }
 

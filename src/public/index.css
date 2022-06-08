@@ -5,6 +5,10 @@
     --bg-wrong-card: #ef5350;
     --bg-sample-card: #90caf9;
     --bg-hover-sample-card: #42a5f5;
+    --four-card-lenght: 700px;
+    --five-card-lenght: 875px;
+    --six-card-lenght: 1050px;
+    --seven-card-lenght: 1225px;
 }
 
 html
@@ -17,10 +21,18 @@ body{
 }
 
 .full-size{
-    height: 100%;
+    height: 90vh;
+}
+
+.centered-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .game-container{
+    margin-top: 1em;
     padding: 2px 5px;
     display: flex;
     flex-direction: column;
@@ -36,8 +48,8 @@ body{
 }
 
 .table-container{
-    height: 700px;
-    width: 700px;
+    height: var(--four-card-lenght);
+    width: var(--four-card-lenght);
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: repeat(4, 1fr);
@@ -45,22 +57,22 @@ body{
 }
 
 .medium-table{
-    height: 700px;
-    width: 1050px;
+    height: var(--four-card-lenght);
+    width: var(--six-card-lenght);
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: repeat(6, 1fr);
 }
 
 .hard-table{
-    height: 875px;
-    width: 1050px;
+    height: var(--five-card-lenght);
+    width: var(--six-card-lenght);
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(6, 1fr);
 }
 
 .insane-table{
-    height: 1050px;
-    width: 1225px;
+    height: var(--six-card-lenght);
+    width: var(--seven-card-lenght);
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(7, 1fr);
 }
@@ -139,8 +151,9 @@ body{
 }
 
 .game-nav{
+    height: fit-content;
+    padding: .8em;
     margin: 0 0 10px 0;
-    position: relative;
 }
 
 .game-nav ul{
@@ -149,7 +162,7 @@ body{
 }
 
 .game-nav h4{
-    margin: 0.3em 0 0 0;
+    margin: 0;
 }
 
 .poke-info{
@@ -219,9 +232,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    /* position: absolute;
     right: 0.6em;
-    top: 0.6em;
+    top: 0.6em; */
     border-radius: 100%;
     transition: all 0.8s ease-in-out;
 }
@@ -293,13 +306,12 @@ body{
     border-top: 3px solid #00000040;
 }
 
+
+
 .game-score-table{
-    max-height: 14em;
     background-color: var(--bg-hover-sample-card);
     color: oldlace;
     position: sticky;
-    /* top: 5em;
-    right: 1.2em; */
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -333,3 +345,59 @@ body{
 .menu-position-score > .game-score-table{
     position: initial;
 }
+
+.game-score{
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+}
+
+
+@media (max-height: 900px ){
+    :root{
+        --four-card-lenght: 500px;
+        --five-card-lenght: 625px;
+        --six-card-lenght: 750px;
+        --seven-card-lenght: 875px;
+    }
+}
+
+
+@media (max-height: 700px){
+    :root{
+        --four-card-lenght: 440px;
+        --five-card-lenght: 550px;
+        --six-card-lenght: 660px;
+        --seven-card-lenght: 770px;
+    }
+}
+
+@media (max-width: 650px){
+    :root{
+        --four-card-lenght: 440px;
+        --five-card-lenght: 550px;
+        --six-card-lenght: 660px;
+        --seven-card-lenght: 770px;
+    }
+
+    .game-score-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+    
+}
+
+
+@media (max-width: 640px){
+    :root{
+        --four-card-lenght: 350px;
+        --five-card-lenght: 437.5px;
+        --six-card-lenght: 525px;
+        --seven-card-lenght: 612.5px;
+    }
+    .game-nav h4{
+        font-size: 1.3em;
+    }
+}
+

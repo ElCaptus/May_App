@@ -5,13 +5,16 @@ function GameScoreTable({level = ''}){
 
     const [scores, setScores] = useState([])
 
-    const TOP_SCORE= 5
+    const TOP_SCORE= 15
 
     useEffect(()=>{
         fetch('/api/scores/')
         .then(data => data.json())
         .then(json =>{
             scores.push(...json)
+            scores.sort((a,b)=>{
+                return a.date < b.date
+            })
             scores.sort((a,b)=>{
                 return a.errors_attached - b.errors_attached
             })
@@ -26,30 +29,37 @@ function GameScoreTable({level = ''}){
     },[])
 
     return (
-        <div className="game-score-table">
+        <div className="game-score-table" onClick={(e)=>{ e.stopPropagation()}}>
             <h5>Top {TOP_SCORE}</h5>
             <div className="score-table">
-                <div>
-                    {
-                        scores.map((score,index)=>
-                                <div key={index}>{score.name}</div>
-                            )
-                    }
-                </div>
-                <div>
-                    {
-                        scores.map((score,index)=>
-                                <div key={index}>{score.errors_attached}</div>
-                            )
-                    }
-                </div>
-                <div>
-                    {
-                        scores.map((score, index)=>
-                                <div key={index}>{score.level}</div>
-                            )
-                    }
-                </div>
+                {
+                    scores.length ?
+                    <>
+                    <div>
+                        {
+                            scores.map((score,index)=>
+                                    <div key={index}>{score.name}</div>
+                                )
+                        }
+                    </div>
+                    <div>
+                        {
+                            scores.map((score,index)=>
+                                    <div key={index}>{score.errors_attached}</div>
+                                )
+                        }
+                    </div>
+                    <div>
+                        {
+                            scores.map((score, index)=>
+                                    <div key={index}>{score.level}</div>
+                                )
+                        }
+                    </div>
+                    </>
+                    :
+                    <p>No winners yet.</p>
+                }
             </div>
         </div>
     )
