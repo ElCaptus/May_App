@@ -384,14 +384,28 @@ body{
     }
 }
 
-@media (max-width: 1000px){
+@media (max-height: 700px) {
+    .table-container{
+        gap: .1em;
+    }
+
     :root{
-        --five-card-lenght: 550px;
-        --six-card-lenght: 660px;
+        --five-card-lenght: 500px;
+        --six-card-lenght: 600px;
     }
 
     .medium-table{
+        --four-card-lenght: 400px;
+        --six-card-lenght: 600px;
+    }
+
+}
+
+@media (max-width: 1000px){
+    :root{
         --four-card-lenght: 440px;
+        --five-card-lenght: 550px;
+        --six-card-lenght: 660px;
     }
 
     .insane-table{
@@ -435,14 +449,23 @@ body{
 
 @media (max-width: 450px){
 
+    .table-container{
+        gap: .1em;
+    }
+
     .big-screen{
         display: none;
     }
 
     :root{
-        --four-card-lenght: 275px;
-        --five-card-lenght: 343.75px;
-        --six-card-lenght: 414.5;
+        --four-card-lenght: 420px;
+        --five-card-lenght: 420px;
+        --six-card-lenght: 490px;
+    }
+
+    .medium-table{
+        --four-card-lenght: 420px;
+        --six-card-lenght: 560px;
     }
 
     .game-nav h4{
@@ -450,3 +473,29 @@ body{
     }
 }
 
+@media (max-width: 375px){
+
+    :root{
+        --four-card-lenght: 370px;
+        --five-card-lenght: 370px;
+        --six-card-lenght: 420px;
+    }
+
+    .medium-table{
+        --four-card-lenght: 370px;
+        --six-card-lenght: 550px;
+    }
+}
+
+@media (max-width: 320px){
+    :root{
+        --four-card-lenght: 312px; /*realshit*/
+        --five-card-lenght: 314px;
+        --six-card-lenght: 360px;
+    }
+
+    .medium-table{
+        --four-card-lenght: 312px;
+        --six-card-lenght: 460px;
+    }
+}
