@@ -8,7 +8,8 @@
     --four-card-lenght: 700px;
     --five-card-lenght: 875px;
     --six-card-lenght: 1050px;
-    --seven-card-lenght: 1225px;
+    --insane-height: 750px;
+    --insane-width: 875px;
 }
 
 html
@@ -71,8 +72,8 @@ body{
 }
 
 .insane-table{
-    height: var(--six-card-lenght);
-    width: var(--seven-card-lenght);
+    height: var(--insane-height);
+    width: var(--insane-width);
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(7, 1fr);
 }
@@ -368,26 +369,38 @@ body{
         --four-card-lenght: 500px;
         --five-card-lenght: 625px;
         --six-card-lenght: 750px;
-        --seven-card-lenght: 875px;
+        --insane-width:770px;
+        --insane-height:660px;
     }
 }
 
 
-@media (max-height: 700px){
+/* 4 width */
+@media (max-height: 800px){
     :root{
         --four-card-lenght: 440px;
         --five-card-lenght: 550px;
         --six-card-lenght: 660px;
-        --seven-card-lenght: 770px;
     }
 }
 
-@media (max-width: 650px){
+@media (max-width: 1000px){
+    :root{
+        --five-card-lenght: 550px;
+        --six-card-lenght: 660px;
+    }
+
+    .medium-table{
+        --four-card-lenght: 440px;
+    }
+
+}
+
+@media (max-width: 670px){
     :root{
         --four-card-lenght: 440px;
         --five-card-lenght: 550px;
         --six-card-lenght: 660px;
-        --seven-card-lenght: 770px;
     }
 
     .game-score-form{
@@ -399,12 +412,11 @@ body{
 }
 
 
-@media (max-width: 640px){
+@media (max-width: 450px){
     :root{
         --four-card-lenght: 350px;
         --five-card-lenght: 437.5px;
         --six-card-lenght: 525px;
-        --seven-card-lenght: 612.5px;
     }
     .game-nav h4{
         font-size: 1.3em;
