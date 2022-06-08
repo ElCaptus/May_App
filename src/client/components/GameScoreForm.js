@@ -51,10 +51,12 @@ function GamescoreForm({state, errors, level, close}){
             {
                 state=='win' ?
                 <div className="score">
-                    <input type="text" value={inp} onChange={onChangeInput} placeholder="Your name"
-                    title={`Max length ${MAX_INPUT_LENGTH}, if you overflow your name will be cuted.`}
-                    />
-                    <span className={inputClass}>{MAX_INPUT_LENGTH - inp.length}</span>
+                    <div className="input-length">
+                        <input type="text" value={inp} onChange={onChangeInput} placeholder="Your name"
+                        title={`Max length ${MAX_INPUT_LENGTH}, if you overflow your name will be cuted.`}
+                        />
+                        <span className={inputClass}>{MAX_INPUT_LENGTH - inp.length}</span>
+                    </div>
                     <div className="menu-button" onClick={submitScore}>Submit Score</div>
                 </div>
                 :

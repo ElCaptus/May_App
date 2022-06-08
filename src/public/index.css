@@ -352,6 +352,16 @@ body{
     padding-top: 2em;
 }
 
+.input-length{
+    position: relative;
+}
+
+.input-length span{
+    position: absolute;
+    top: 0.8em;
+    right: 0.5em;
+}
+
 
 @media (max-height: 900px ){
     :root{
