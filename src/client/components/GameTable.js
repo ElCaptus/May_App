@@ -89,7 +89,7 @@ function GameTable ({pokemones, level}){
     })
 
     return( 
-        <div class="">
+        <div>
             <GameScoreForm state={state} close={closeScoreForm} level={level} errors={attempts}/>
             <nav className={'game-nav '+currentClass}>
                 <ul>
