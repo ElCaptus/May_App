@@ -11,19 +11,15 @@ function GameScoreTable({level = ''}){
         fetch('/api/scores/')
         .then(data => data.json())
         .then(json =>{
-            scores.push(...json)
-            scores.sort((a,b)=>{
-                return a.date < b.date
-            })
-            scores.sort((a,b)=>{
+            let filteredScores = json.reverse()
+            filteredScores.sort((a,b)=>{
                 return a.errors_attached - b.errors_attached
             })
-            scores.sort((a,b)=>{
+            filteredScores.sort((a,b)=>{
                 return levels[b.level].size - levels[a.level].size
             })
-            let filteredScores = scores
             if(level)
-                filteredScores = scores.filter(score => score.level === level )
+                filteredScores = filteredScores.filter(score => score.level === level )
             setScores(filteredScores.slice(0,TOP_SCORE))
         })
     },[])
